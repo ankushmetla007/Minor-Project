@@ -39,7 +39,77 @@
         <img src="./img/1.png" class="profile_image" alt="">
         <h4>NAME OF FACULTY</h4>
       </center>
-      <div id='cssmenu'>
+      <!-- <div class="sidenav">
+         <a href="#about">About</a>
+         <a href="#services">Services</a>
+         <a href="#clients">Clients</a>
+         <a href="#contact">Contact</a>
+         <button class="dropdown-btn">Dropdown 
+           <i class="fa fa-caret-down"></i>
+         </button>
+         <div class="dropdown-container">
+           <a href="#">Link 1</a>
+           <a href="#">Link 2</a>
+           <a href="#">Link 3</a>
+         </div>
+         <a href="#contact">Search</a>
+       </div> -->
+
+       <div class="sidenav" id='cssmenu'>
+         <ul>
+            <li><a href='#' class="dropdown-btn"><span>B.Tech - CSE <i class="fa fa-caret-down"></i></span></a>
+               <div class="dropdown-container"> 
+                  <a href='#'><span>1st Year</span></a>
+                  <a href='#'><span>2nd Year</span></a>
+                  <a href='#'><span>3rd Year</span></a>
+                  <a href='#'><span>4th Year</span></a>
+               </div>
+            </li>
+            <li><a href='#' class="dropdown-btn"><span>B.Tech - ME <i class="fa fa-caret-down"></i></span></a>
+               <div class="dropdown-container"> 
+                  <a href='#'><span>1st Year</span></a>
+                  <a href='#'><span>2nd Year</span></a>
+                  <a href='#'><span>3rd Year</span></a>
+                  <a href='#'><span>4th Year</span></a>
+               </div>
+            </li>
+            <li><a href='#' class="dropdown-btn"><span>B.Tech - ECE <i class="fa fa-caret-down"></i></span></a>
+               <div class="dropdown-container"> 
+                  <a href='#'><span>1st Year</span></a>
+                  <a href='#'><span>2nd Year</span></a>
+                  <a href='#'><span>3rd Year</span></a>
+                  <a href='#'><span>4th Year</span></a>
+               </div>
+            </li>
+            <li><a href='#' class="dropdown-btn"><span>B.Tech - EEE <i class="fa fa-caret-down"></i></span></a>
+               <div class="dropdown-container"> 
+                  <a href='#'><span>1st Year</span></a>
+                  <a href='#'><span>2nd Year</span></a>
+                  <a href='#'><span>3rd Year</span></a>
+                  <a href='#'><span>4th Year</span></a>
+               </div>
+            </li>
+            <li><a href='#' class="dropdown-btn"><span>B.Tech - CE <i class="fa fa-caret-down"></i></span></a>
+               <div class="dropdown-container"> 
+                  <a href='#'><span>1st Year</span></a>
+                  <a href='#'><span>2nd Year</span></a>
+                  <a href='#'><span>3rd Year</span></a>
+                  <a href='#'><span>4th Year</span></a>
+               </div>
+            </li>
+            <li><a href='#' class="dropdown-btn"><span>B.Tech - Cyber-Security <i class="fa fa-caret-down"></i></span></a>
+               <div class="dropdown-container"> 
+                  <a href='#'><span>1st Year</span></a>
+                  <a href='#'><span>2nd Year</span></a>
+                  <a href='#'><span>3rd Year</span></a>
+                  <a href='#'><span>4th Year</span></a>
+               </div>
+            </li>
+            
+         </ul>
+         </div>
+       
+      <!-- <div class="sidenav" id='cssmenu'>
         <ul>
            <li><a href='#'><span>B.Tech - CSE</span></a>
               <ul>
@@ -91,7 +161,7 @@
            </li>
            
         </ul>
-        </div>
+        </div> -->
         
     </div>
   
@@ -133,6 +203,24 @@
            </div>
         </div>
     </footer>
+
+    <script>
+      /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+      var dropdown = document.getElementsByClassName("dropdown-btn");
+      var i;
+      
+      for (i = 0; i < dropdown.length; i++) {
+        dropdown[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var dropdownContent = this.nextElementSibling;
+        if (dropdownContent.style.display === "block") {
+        dropdownContent.style.display = "none";
+        } else {
+        dropdownContent.style.display = "block";
+        }
+        });
+      }
+      </script>
 
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
 <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
