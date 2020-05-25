@@ -1,4 +1,4 @@
-<?php include('./header.php');?>
+<?php include('./header/header.php');?>
 <div class="container">
         <div class="d-flex justify-content-center h-100">
             <div class="card cardlogin">
@@ -23,7 +23,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fa fa-sign-in fa-lg"></i></span>
                             </div>
-                            <select class="form-control" name="login_role" id="role" required>
+                            <select class="form-control" name="role" id="role" required>
                                 <option value="" disabled selected hidden>Login Role</option>
                                 <option value="admin">Admin</option>
                                 <option value="teacher">Teacher</option>
@@ -36,7 +36,7 @@
                         <!-- <div class="form-group">
                             <input type="submit" value="Login" id="login_button" class="btn float-right login_btn">
                         </div> -->
-                        <button type="button" name="login-submit" id="login-submit" tabindex="4" 
+                        <button type="submit" name="login-submit" id="login-submit" tabindex="4" 
                         class="btn float-right login_btn">
 							 <span class="spinner"><i class="icon-spin icon-refresh" id="spinner"></i></span> Log In
 						</button>
@@ -47,60 +47,33 @@
                         Don't have an account?<a href="./signup.php">Sign Up</a>
                     </div>
                     <div class="d-flex justify-content-center">
-                        <a href="#">Forgot your password?</a>
+                        <a href="#" data-toggle="modal" data-target="#myModal">
+                        Forgot Password
+                        </a> 
+                        <div class="modal fade" id="myModal">
+                            <div class="modal-dialog">
+                            <div class="modal-content">
+                            
+                                <div class="modal-header">
+                                <h4 class="modal-title">Forgot Password</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+
+                                <div class="modal-body">
+                                    <center><p>Coming Soon</p></center>
+                                </div>
+                                
+                                <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">OK</button>
+                                </div>
+                                
+                            </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-<script>
-$(document).ready(function(){
-    /* handling form validation */
-    $("#login-submit").click(function() {
-    console.log('login clicked');
-	$("#loginForm").validate({
-		rules: {
-			password: {
-				required: true,
-			},
-			username: {
-				required: true,
-				email: true
-			},
-		},
-		messages: {
-			password:{
-			  required: "Please enter your password"
-			 },
-			username: "Please enter your email address",
-		},
-    })
-    console.log('form submit called');
-    var data = $("#loginForm").serialize();
-    $.ajax({				
-        type : 'POST',
-        url  : 'backend/response.php?action=login',
-        data : data,
-        beforeSend: function(){	
-            $("#error").fadeOut();
-            $("#login-submit").html('<span class="glyphicon glyphicon-transfer"></span> &nbsp; sending ...');
-        },
-        success : function(response){	
-            console.log("response from response page is:" +response);		
-            if($.trim(response) === "1"){
-                console.log('dddd');									
-                $("#login-submit").html('Signing In ...');
-                setTimeout(' window.location.href = "dashboard/dashboard.php"; ',2000);
-            } else {
-                alert("User not found Please Register yourself");									
-                $("#error").fadeIn(1000, function(){						
-                    $("#error").html(response).show();
-                });
-            }
-        }
-    });
-    return false;
-})
-});
-</script>
-<?php include('./footer.php');
+
+<?php include('./footer/footer.php');

@@ -52,7 +52,7 @@ header{
   background: #2f323a;
   margin-top: 90px;
   padding-top: 30px;
-  position: fixed;
+  position: absolute;
   left: 0;
   width: 250px;
   height: 100vh;
@@ -60,7 +60,6 @@ header{
   transition-property: left;
   z-index: 1;
   border-right: 4px solid #1b9bff;
-  overflow: scroll;
 }
 
 .sidebar .profile_image{
@@ -119,11 +118,12 @@ label #sidebar_btn:hover{
 }
 
 .content{
+  padding: 150px 0px 0px 300px;
   margin-left: 0px;
   background-color: #2d5986; 
   background-position: center;
   background-size: cover;
-  height: 143vh;
+  height: 150vh;
   transition: 0.5s;
 }
 
@@ -180,9 +180,9 @@ label #sidebar_btn:hover{
   float: none;
 }
 
-/* #cssmenu ul li:hover > ul {
+#cssmenu ul li:hover > ul {
   visibility: visible;
-} */
+}
 #cssmenu ul ul {
   top: 1px;
   left: 102%;
@@ -234,13 +234,13 @@ label #sidebar_btn:hover{
 #cssmenu > ul > li > a:hover {
   color: #ffffff;
 }
-/* #cssmenu > ul > li.active a {
+#cssmenu > ul > li.active a {
   background: #1b9bff;
 }
 #cssmenu > ul > li a:hover,
 #cssmenu > ul > li:hover a {
   background: #1b9bff;
-} */
+}
 #cssmenu li {
   position: relative;
 }
@@ -301,59 +301,149 @@ label #sidebar_btn:hover{
     z-index: 9;                       
 }
 
+.js-pscroll {
+  position: relative;
+  overflow: hidden;
+}
 
 
-/* Fixed sidenav, full height */
-.sidenav {
-  height: 100%;
-  width: 200px;
-  position: fixed;
-  z-index: 1;
+.limiter {
+  width: 850px;
+  margin-top: 40px;
+}
+
+.wrap-table100 {
+  width: 850px;
+}
+
+.table100 {
+  background-color: #fff;
+}
+
+table {
+  width: 100%;
+}
+
+th, td {
+  font-weight: unset;
+  padding-right: 10px;
+}
+
+.column1 {
+  width: 33%;
+  padding-left: 40px;
+}
+
+.column2 {
+  width: 13%;
+}
+
+.column3 {
+  width: 22%;
+}
+
+.column4 {
+  width: 19%;
+}
+
+.column5 {
+  width: 13%;
+}
+
+.column11{
+  width: 20%;
+  padding-left: 40px;
+}
+
+.column22{
+  width: 70%;
+}
+
+.column111{
+  width: 30%;
+  padding-left: 40px;
+}
+
+.column222{
+  width: 30%;
+}
+
+.column333{
+  width: 30%;
+}
+
+
+
+.table100-head th {
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+.table100-body td {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.table100 {
+  position: relative;
+  padding-top: 60px;
+}
+
+.table100-head {
+  position: absolute;
+  width: 100%;
   top: 0;
   left: 0;
-  background-color: #111;
-  overflow-x: hidden;
-  padding-top: 20px;
 }
 
-/* Style the sidenav links and the dropdown button */
-.sidenav a, .dropdown-btn {
-  padding: 6px 8px 6px 16px;
-  text-decoration: none;
-  font-size: 20px;
-  color: #818181;
-  display: block;
-  border: none;
-  background: none;
-  width: 100%;
-  text-align: left;
-  cursor: pointer;
-  outline: none;
+.table100-body {
+  max-height: 410px;
+  overflow: auto;
 }
 
-/* On mouse-over */
-.sidenav a:hover, .dropdown-btn:hover {
-  color: #f1f1f1;
+.table100.ver1 th {
+  font-family: Lato-Bold;
+  font-size: 18px;
+  color: #fff;
+  line-height: 1.4;
+
+  background-color: #6c7ae0;
+}
+
+.table100.ver1 td {
+  font-family: Lato-Regular;
+  font-size: 15px;
+  color: #808080;
+  line-height: 1.4;
+}
+
+.table100.ver1 .table100-body tr:nth-child(even) {
+  background-color: #f8f6ff;
+}
+
+.table100.ver1 {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
+  -o-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
+  -ms-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
+}
+
+.table100.ver1 .ps__rail-y {
+  right: 5px;
+}
+
+.table100.ver1 .ps__rail-y::before {
+  background-color: #ebebeb;
+}
+
+.table100.ver1 .ps__rail-y .ps__thumb-y::before {
+  background-color: #cccccc;
 }
 
 
 
-/* Add an active class to the active dropdown button */
-.active {
-  background-color: green;
-  color: white;
-}
 
-/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
-.dropdown-container {
-  display: none;
-  visibility: hidden;
-  background-color: #262626;
-  padding-left: 8px;
-}
 
-/* Optional: Style the caret down icon */
-.fa-caret-down {
-  float: right;
-  padding-right: 8px;
-}

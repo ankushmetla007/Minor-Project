@@ -1,4 +1,4 @@
-<?php include('./header.php');?>
+<?php include('./header/header.php');?>
     <div class="container">
         <div class="d-flex justify-content-center h-100">
             <div class="card cardsignup">
@@ -33,21 +33,47 @@
                         </div>
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fa fa-book fa-lg"></i></span>
+                                <span class="input-group-text"><i class="fa fa-envelope fa-lg"></i></span>
                             </div>
-                            <input type="text" name="course" id="course" class="form-control" placeholder="Course" required>
+                            <input type="email" name="emailid" id="emailid" class="form-control" placeholder="Email" required>
                         </div>
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fa fa-clock fa-lg"></i></span>
+                                <span class="input-group-text"><i class="fa fa-book fa-lg"></i></span>
                             </div>
-                            <input type="text" name="year_or_sem" id="year_or_sem" class="form-control" placeholder="Year/Sem" required>
+                            <select class="form-control" name="branchname" id="branchname" required>
+                                <option value="" disabled selected hidden>Branchname</option>
+                                <option value="CSE-1">CSE-1</option>
+                                <option value="CSE-2">CSE-2</option>
+                                <option value="CSE-3">CSE-3</option>
+                                <option value="CSE-4">CSE-4</option>
+                                <option value="ME-1">ME-1</option>
+                                <option value="ME-2">ME-2</option>
+                                <option value="ME-3">ME-3</option>
+                                <option value="ME-4">ME-4</option>
+                                <option value="ECE-1">ECE-1</option>
+                                <option value="ECE-2">ECE-2</option>
+                                <option value="ECE-3">ECE-3</option>
+                                <option value="ECE-4">ECE-4</option>
+                                <option value="EEE-1">EEE-1</option>
+                                <option value="EEE-2">EEE-2</option>
+                                <option value="EEE-3">EEE-3</option>
+                                <option value="EEE-4">EEE-4</option>
+                                <option value="CE-1">CE-1</option>
+                                <option value="CE-2">CE-2</option>
+                                <option value="CE-3">CE-3</option>
+                                <option value="CE-4">CE-4</option>
+                                <option value="CBS-1">CBS-1</option>
+                                <option value="CBS-2">CBS-2</option>
+                                <option value="CBS-3">CBS-3</option>
+                                <option value="CBS-4">CBS-4</option>
+                            </select>
                         </div>
                         
                         <!-- <div class="form-group text-center">
                             <input type="submit" value="Sign Up" class="btn login_btn">
                         </div> -->
-                        <button type="button" name="signup-submit" id="signup-submit" tabindex="4" 
+                        <button type="submit" name="signup-submit" id="signup-submit" tabindex="4" 
                         class="btn float-right login_btn">
 							 <span class="spinner"><i class="icon-spin icon-refresh" id="spinner"></i></span> Sign Up
 						</button>
@@ -61,57 +87,6 @@
             </div>
         </div>
     </div>
-    <script>
-$(document).ready(function(){
-    /* handling form validation */
-    $("#signup-submit").click(function() {
-    console.log('signup clicked');
-	$("#signupForm").validate({
-		rules: {
-			password: {
-				required: true,
-			},
-			username: {
-				required: true,
-				email: true
-			},
-		},
-		messages: {
-			password:{
-			  required: "Please enter your password"
-			 },
-			username: "Please enter your email address",
-        },
-        submitHandler: function() {
-        console.log('form submit called');
-    var data = $("#signup-submit").serialize();
-    $.ajax({				
-        type : 'POST',
-        url  : 'backend/response.php?action=signup',
-        data : data,
-        beforeSend: function(){	
-            $("#error").fadeOut();
-            $("#signup-submit").html('<span class="glyphicon glyphicon-transfer"></span> &nbsp; sending ...');
-        },
-        success : function(response){	
-            console.log("response from response page is:" +response);		
-            if($.trim(response) === "1"){
-                console.log('dddd');									
-                $("#signup-submit").html('Signing Up ...');
-                setTimeout(' window.location.href = "dashboard/dashboard.php"; ',2000);
-            } else {
-                alert("User not found Please Register yourself");									
-                $("#error").fadeIn(1000, function(){						
-                    $("#error").html(response).show();
-                });
-            }
-        }
-    });
-    return false;
-        }
-    })
-})
-});
-</script>
-    <?php include('./footer.php');?>
+    
+    <?php include('./footer/footer.php');?>
     

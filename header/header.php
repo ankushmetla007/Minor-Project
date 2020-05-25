@@ -21,7 +21,7 @@
 
 	<!--Custom styles-->
     <link rel="stylesheet" type="text/css" href="./css/formstyle.css">
-    <link rel="stylesheet" type="text/css" href="./css/studentpagestyle.css">
+    <!-- <link rel="stylesheet" type="text/css" href="./css/studentpagestyle.css"> -->
     <link rel="stylesheet" type="text/css" href="./css/teacherpagestyle.css">
     <link rel="stylesheet" type="text/css" href="./css/styles.css">
 </head>

@@ -26,10 +26,14 @@
            </div>
            <div class="row justify-content-center">             
                 <div class="col-auto">
-                    <p>© Copyright <?php echo date("Y");?> Ansal University</p>
+                    <p>© Copyright 2020 Ansal University</p>
                 </div>
            </div>
         </div>
     </footer>
-</body>
+
+<script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+  </body>
 </html>

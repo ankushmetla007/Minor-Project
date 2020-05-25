@@ -1,5 +1,4 @@
 <?php
-session_start();
 Class dbObj{
 	/* Database connection start */
 	public $hostname = "localhost";
