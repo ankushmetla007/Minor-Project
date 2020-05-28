@@ -1,5 +1,5 @@
 <?php 
-session_start();
+// session_start();
 include('./header/teacherheader.php');
 include('./functions.php');
 $db = new dbObj();
@@ -55,9 +55,9 @@ $_SESSION['user_id'];
                                             <td class="cell100 column4">'.$stud["project_title"].'</td>';
                                             if($stud["project_title"] == "" || $stud["project_title"] == NULL) {
                                              echo '<td class="cell100 column5">
-                                            <a role="button" data-id="'.$stud["ID"].'" type="button" class="open-AddBookDialog btn btn-danger" data-toggle="modal" data-target="#myModal">
+                                            <button data-id="'.$stud["ID"].'" type="button" class="open-AddBookDialog btn btn-danger" data-toggle="modal" data-target="#myModal">
                                                 Allot Project
-                                            </a>
+                                            </button>
                                             </td>';
                                             } else
                                             echo '<td class="cell100 column5"></td>

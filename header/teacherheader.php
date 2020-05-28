@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+session_start();
+?>
 <html lang="en" dir="ltr">
   <head>
       
@@ -40,7 +43,7 @@
     <div class="sidebar">
       <center>
         <img src="./img/1.png" class="profile_image" alt="">
-        <h4>NAME OF FACULTY</h4>
+        <h4><?php echo $_SESSION['user_session'] ?></h4>
       </center>
       
        

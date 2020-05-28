@@ -1,14 +1,13 @@
 <?php 
 session_start();
 include('./header/studentheader.php');
-include('./header/teacherheader.php');
 include('./functions.php');
 $db = new dbObj();
 $connString =  $db->getConnstring();
 $rspCls = new Getdata($connString);
 $getStudentProjects = $rspCls->getStudentProjects();
-var_dump($getStudentProjects);
-echo $_SESSION['user_id'];
+//var_dump($getStudentProjects);
+//echo $_SESSION['user_id'];
 ?>
     <div class="content">
         <div class="container">
@@ -88,8 +87,8 @@ echo $_SESSION['user_id'];
                                                 foreach ($getStudentProjects as $stud) {   
                                                     $s_no++;
                                                     echo ' <tr class="row100 body">
-                                                    <td class="cell100 column1">'.$s_no.'</td>
-                                                    <td class="cell100 column4">'.$stud["project_title"].'</td>
+                                                    <td class="cell100 column11">'.$s_no.'</td>
+                                                    <td class="cell100 column22">'.$stud["project_title"].'</td>
                                                 </tr>';
                                                 
                                                     

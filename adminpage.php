@@ -57,7 +57,7 @@
                                                         <input type="submit" value="Sign Up" class="btn login_btn">
                                                     </div> -->
                                                     <center>
-                                                        <button type="submit" name="signup-submit" id="signup-submit" tabindex="4" 
+                                                        <button type="submit" name="addteacherbutton" id="addteacherbutton" tabindex="4" 
                                                         class="btn btn-danger login_btn">
                                                             <span class="spinner"><i class="icon-spin icon-refresh" id="spinner"></i></span> Add
                                                         </button>
@@ -274,6 +274,37 @@
         </div>
     </div>
 <script>
+        /* submit teacher form and validation */
+        $('#addTeacher').on('submit', function (e) {
+        e.preventDefault();
+        console.log('form submit called');
+        var data = $("#addTeacher").serialize();
+        console.log(data);
+        $.ajax({				
+            type : 'POST',
+            url  : 'backend/response.php?action=addteacher',
+            data : data,
+            beforeSend: function(){	
+                $("#error").fadeOut();
+                $("#addteacherbutton").html('<span class="glyphicon glyphicon-transfer"></span> &nbsp; sending ...');
+            },
+            success : function(response){	
+                console.log("response from response page is:" +response);		
+                if($.trim(response) === "1"){
+                    alert('successfully registered');									
+                    $("#addteacherbutton").html('Adding Teacher...');
+                    setTimeout(' window.location.href = "../conFusion/adminpage.php"; ',2000);
+                } else {
+                    console.log("Error is:" +response);
+                    alert("Something went wrong. Please try again");									
+                    $("#error").fadeIn(1000, function(){						
+                        $("#error").html(response).show();
+                    });
+                }
+            }
+        });
+        return false;
+    })
     /* submit teacher form and validation */
     $('#addStudentForm').on('submit', function (e) {
         e.preventDefault();
@@ -292,11 +323,11 @@
                 console.log("response from response page is:" +response);		
                 if($.trim(response) === "1"){
                     alert('successfully registered');									
-                    $("#signup-submit").html('Signing Up ...');
+                    $("#addstudent-submit").html('Signing Up ...');
                     setTimeout(' window.location.href = "../conFusion/adminpage.php"; ',2000);
                 } else {
                     console.log("Error is:" +response);
-                    alert("User not found Please Register yourself");									
+                    alert("Something went wrong. Please try again");									
                     $("#error").fadeIn(1000, function(){						
                         $("#error").html(response).show();
                     });

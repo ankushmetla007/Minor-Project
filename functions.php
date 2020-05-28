@@ -57,7 +57,7 @@ class Getdata {
     function getstudents($name) {
         $branchname = $name;
         $sql = "SELECT students.*, projectallocate.project_title FROM students LEFT OUTER JOIN projectallocate ON students.ID=projectallocate.student_id where students.branchname = '".$branchname."' ORDER BY projectallocate.project_title";
-        echo $sql;
+        // echo $sql;
         $resultset = mysqli_query($this->conn, $sql) or die("database error:". mysqli_error($this->conn));
         // Fetch data to temporary studentbuffer:
         while ($row = mysqli_fetch_assoc($resultset)){
@@ -108,7 +108,7 @@ class Getdata {
     function getStudentProjects() {
         echo $_SESSION['user_id'];
         $sql = "SELECT project_title FROM projectallocate where student_id = '".$_SESSION['user_id']."'";
-        echo $sql;
+        // echo $sql;
         $resultset = mysqli_query($this->conn, $sql) or die("database error:". mysqli_error($this->conn));
         // Fetch data to temporary projectbuffer:
         while ($row = mysqli_fetch_assoc($resultset)){

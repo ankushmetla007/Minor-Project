@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+session_start();
+?>
 <html lang="en" dir="ltr">
   <head>
       
@@ -19,8 +22,12 @@
 
     <script language="javascript">
         function confirmlink(link) {
-        if ( confirm("Are you sure you want to log out?"))
-        window.location = "file:///C:/Users/Ankush/Desktop/Website%20Allocation/Frontpage.html";
+        if ( confirm("Are you sure you want to log out?")){
+           <?php session_destroy();
+            session_unset();?>
+            window.location = "file:///C:/Users/Ankush/Desktop/Website%20Allocation/Frontpage.html";
+        }
+        
         }
     </script>
 
@@ -41,6 +48,6 @@
     <div class="sidebar">
         <center>
             <img src="./img/1.png" class="profile_image" alt="">
-            <h4>NAME OF ADMIN</h4>
+            <h4>admin</h4>
         </center>
     </div> 

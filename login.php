@@ -48,26 +48,26 @@
                     </div>
                     <div class="d-flex justify-content-center">
                         <a href="#" data-toggle="modal" data-target="#myModal">
-                        Forgot Password
+                            Forgot Password
                         </a> 
                         <div class="modal fade" id="myModal">
                             <div class="modal-dialog">
-                            <div class="modal-content">
-                            
-                                <div class="modal-header">
-                                <h4 class="modal-title">Forgot Password</h4>
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                </div>
+                                <div class="modal-content">
+                                
+                                    <div class="modal-header">
+                                    <h4 class="modal-title">Forgot Password</h4>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    </div>
 
-                                <div class="modal-body">
-                                    <center><p>Coming Soon</p></center>
+                                    <div class="modal-body">
+                                        <center><p>Coming Soon</p></center>
+                                    </div>
+                                    
+                                    <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">OK</button>
+                                    </div>
+                                    
                                 </div>
-                                
-                                <div class="modal-footer">
-                                <button type="button" class="btn btn-danger" data-dismiss="modal">OK</button>
-                                </div>
-                                
-                            </div>
                             </div>
                         </div>
                     </div>

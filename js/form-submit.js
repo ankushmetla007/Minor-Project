@@ -22,7 +22,7 @@ $(document).ready(function(){
                 setTimeout(' window.location.href = "../conFusion/login.php"; ',2000);
             } else {
                 console.log("Error is:" +response);
-                alert("User not found Please Register yourself");									
+                alert("Something went wrong. Please try again");									
                 $("#error").fadeIn(1000, function(){						
                     $("#error").html(response).show();
                 });
@@ -44,7 +44,7 @@ $(document).ready(function(){
             data : data,
             beforeSend: function(){	
                 $("#error").fadeOut();
-                $("#signup-submit").html('<span class="glyphicon glyphicon-transfer"></span> &nbsp; sending ...');
+                $("#login-submit").html('<span class="glyphicon glyphicon-transfer"></span> &nbsp; sending ...');
             },
             success : function(response){	
                 console.log("response from response page is:" +response);		

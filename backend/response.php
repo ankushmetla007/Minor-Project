@@ -41,8 +41,8 @@ class Student {
             $sql = "INSERT INTO users (user_name, password, role) VALUES ('".$user_name."', '".$user_password."', 'student')";
 			if (mysqli_query($this->conn, $sql)) {
 				// echo "1";
-				$sql2 = "INSERT INTO students (ID, std_name, roll_number, contact, emailid, branchname) 
-				VALUES ('".$this->conn->insert_id."','".$user_name."', '".$roll_number."', '".$phone_number."', '".$email."', '".$branchname."')";
+				$sql2 = "INSERT INTO students (ID, std_id, std_name, roll_number, contact, emailid, branchname) 
+				VALUES ((Select ID from users where user_name ='".$user_name."'),(Select ID from users where user_name ='".$user_name."'),'".$user_name."', '".$roll_number."', '".$phone_number."', '".$email."', '".$branchname."')";
             if (mysqli_query($this->conn, $sql2)) {
 				echo "1";
               } else {
